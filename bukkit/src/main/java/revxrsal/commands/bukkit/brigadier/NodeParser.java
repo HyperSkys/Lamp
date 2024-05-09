@@ -207,9 +207,7 @@ final class NodeParser {
                 Message tooltip = new LiteralMessage(tooltipMessage);
                 String input = context.getInput();
                 try {
-                    ArgumentStack args = ArgumentStack.parseForAutoCompletion(
-                            input.startsWith("/") ? input.substring(1) : input
-                    );
+                    ArgumentStack args = ArgumentStack.parseForAutoCompletion(input);
                     parameter.getSuggestionProvider().getSuggestions(args, actor, parameter.getDeclaringCommand())
                             .stream()
                             .filter(c -> c.toLowerCase().startsWith(args.getLast().toLowerCase()))
