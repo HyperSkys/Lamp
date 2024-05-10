@@ -208,6 +208,7 @@ final class NodeParser {
                 String input = context.getInput();
                 try {
                     ArgumentStack args = ArgumentStack.parseForAutoCompletion(input);
+                    System.out.println("DEBUG);
                     parameter.getSuggestionProvider().getSuggestions(args, actor, parameter.getDeclaringCommand())
                             .stream()
                             .filter(c -> c.toLowerCase().startsWith(args.getLast().toLowerCase()))
