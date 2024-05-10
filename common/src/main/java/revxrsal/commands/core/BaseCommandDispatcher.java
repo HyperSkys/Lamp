@@ -68,7 +68,6 @@ public final class BaseCommandDispatcher {
                 arguments.removeFirst();
                 return searchCategory(actor, category, path, arguments);
             } else {
-                throw new InvalidCommandException(path, path.getFirst());
             }
         } catch (Throwable throwable) {
             handler.getExceptionHandler().handleException(throwable, actor);
